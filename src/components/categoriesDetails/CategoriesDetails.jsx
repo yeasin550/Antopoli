@@ -10,6 +10,9 @@ const CategoriesDetails = () => {
         const fetchAnimals = async () => {
             try {
                 const response = await fetch("https://antopoli-server.vercel.app/animals");
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
                 const data = await response.json();
                 setAnimals(data);
             } catch (error) {
@@ -17,8 +20,10 @@ const CategoriesDetails = () => {
             }
         };
 
+
         fetchAnimals();
-    }, [animals]);
+    }, [animals]); // Empty dependency array
+
 
     const handleDelete = async (id) => {
         try {

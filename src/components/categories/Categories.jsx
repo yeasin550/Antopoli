@@ -28,7 +28,7 @@ const Categories = () => {
         const data = await res.json();
         return data.data.url;
     };
-    
+
     const onSubmitAnimal = async (data) => {
         try {
             const imageUrl = await uploadImageToImgbb(data.animalImage);
@@ -98,7 +98,7 @@ const Categories = () => {
     // useEffect(() => {
     //     const fetchCategories = async () => {
     //         try {
-    //             const response = await fetch("http://localhost:5000/categories");
+    //             const response = await fetch("https://antopoli-server.vercel.app/categories");
     //             const data = await response.json();
     //             setCategories(data);
     //         } catch (error) {
