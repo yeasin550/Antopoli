@@ -32,7 +32,7 @@ const Categories = () => {
     const onSubmitAnimal = async (data) => {
         try {
             const imageUrl = await uploadImageToImgbb(data.animalImage);
-            const response = await fetch("http://localhost:5000/animals", {
+            const response = await fetch("https://antopoli-server-esguntkly-yeasin550s-projects.vercel.app/animals", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -55,7 +55,7 @@ const Categories = () => {
 
     const onSubmitCategory = async (data) => {
         try {
-            const response = await fetch("http://localhost:5000/categories", {
+            const response = await fetch("https://antopoli-server-esguntkly-yeasin550s-projects.vercel.app/categories", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -75,53 +75,6 @@ const Categories = () => {
         reset();
         setIsCategoryModalOpen(false);
     };
-
-    // const onSubmitAnimal = async (data) => {
-    //     try {
-    //         const imageUrl = await uploadImageToImgbb(data.animalImage);
-    //         const response = await fetch("http://localhost:5000/animals", {
-    //             method: "POST",
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //             },
-    //             body: JSON.stringify({ animalName: data.animalName, animalImage: imageUrl }),
-    //         });
-
-    //         if (response.ok) {
-    //             console.log("Animal created successfully");
-    //         } else {
-    //             console.error("Failed to create animal");
-    //         }
-    //     } catch (error) {
-    //         console.error("Error:", error);
-    //     }
-
-    //     reset();
-    //     setIsAnimalModalOpen(false);
-    // };
-
-    // const onSubmitCategory = async (data) => {
-    //     try {
-    //         const response = await fetch("http://localhost:5000/categories", {
-    //             method: "POST",
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //             },
-    //             body: JSON.stringify({ categoryName: data.categoryName }),
-    //         });
-
-    //         if (response.ok) {
-    //             console.log("Category created successfully");
-    //         } else {
-    //             console.error("Failed to create category");
-    //         }
-    //     } catch (error) {
-    //         console.error("Error:", error);
-    //     }
-
-    //     reset();
-    //     setIsCategoryModalOpen(false);
-    // };
 
 
     // Inside your useEffect hook

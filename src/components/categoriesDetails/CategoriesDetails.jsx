@@ -9,7 +9,7 @@ const CategoriesDetails = () => {
     useEffect(() => {
         const fetchAnimals = async () => {
             try {
-                const response = await fetch("http://localhost:5000/animals");
+                const response = await fetch("https://antopoli-server-arvh5hfow-yeasin550s-projects.vercel.app/animals");
                 const data = await response.json();
                 setAnimals(data);
             } catch (error) {
@@ -22,7 +22,7 @@ const CategoriesDetails = () => {
 
     const handleDelete = async (id) => {
         try {
-            const response = await fetch(`http://localhost:5000/animals/${id}`, {
+            const response = await fetch(`https://antopoli-server-arvh5hfow-yeasin550s-projects.vercel.app/animals/${id}`, {
                 method: 'DELETE',
             });
 
