@@ -32,7 +32,7 @@ const Categories = () => {
     const onSubmitAnimal = async (data) => {
         try {
             const imageUrl = await uploadImageToImgbb(data.animalImage);
-            const response = await fetch("https://antopoli-server-esguntkly-yeasin550s-projects.vercel.app/animals", {
+            const response = await fetch("https://antopoli-server.vercel.app/animals", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -55,7 +55,7 @@ const Categories = () => {
 
     const onSubmitCategory = async (data) => {
         try {
-            const response = await fetch("https://antopoli-server-esguntkly-yeasin550s-projects.vercel.app/categories", {
+            const response = await fetch("https://antopoli-server.vercel.app/categories", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
